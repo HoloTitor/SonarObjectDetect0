@@ -1,0 +1,45 @@
+net.optimized_memory = 0
+batch = 1, time_steps = 1, train = 0
+   layer   filters  size/strd(dil)      input                output
+   0 conv     16       3 x 3/ 1    416 x 416 x   3 ->  416 x 416 x  16 0.150 BF
+   1 max                2x 2/ 2    416 x 416 x  16 ->  208 x 208 x  16 0.003 BF
+   2 conv     32       3 x 3/ 1    208 x 208 x  16 ->  208 x 208 x  32 0.399 BF
+   3 max                2x 2/ 2    208 x 208 x  32 ->  104 x 104 x  32 0.001 BF
+   4 conv     16       1 x 1/ 1    104 x 104 x  32 ->  104 x 104 x  16 0.011 BF
+   5 conv    128       3 x 3/ 1    104 x 104 x  16 ->  104 x 104 x 128 0.399 BF
+   6 conv     16       1 x 1/ 1    104 x 104 x 128 ->  104 x 104 x  16 0.044 BF
+   7 conv    128       3 x 3/ 1    104 x 104 x  16 ->  104 x 104 x 128 0.399 BF
+   8 max                2x 2/ 2    104 x 104 x 128 ->   52 x  52 x 128 0.001 BF
+   9 conv     32       1 x 1/ 1     52 x  52 x 128 ->   52 x  52 x  32 0.022 BF
+  10 conv    256       3 x 3/ 1     52 x  52 x  32 ->   52 x  52 x 256 0.399 BF
+  11 conv     32       1 x 1/ 1     52 x  52 x 256 ->   52 x  52 x  32 0.044 BF
+  12 conv    256       3 x 3/ 1     52 x  52 x  32 ->   52 x  52 x 256 0.399 BF
+  13 max                2x 2/ 2     52 x  52 x 256 ->   26 x  26 x 256 0.001 BF
+  14 conv     64       1 x 1/ 1     26 x  26 x 256 ->   26 x  26 x  64 0.022 BF
+  15 conv    512       3 x 3/ 1     26 x  26 x  64 ->   26 x  26 x 512 0.399 BF
+  16 conv     64       1 x 1/ 1     26 x  26 x 512 ->   26 x  26 x  64 0.044 BF
+  17 conv    512       3 x 3/ 1     26 x  26 x  64 ->   26 x  26 x 512 0.399 BF
+  18 max                2x 2/ 2     26 x  26 x 512 ->   13 x  13 x 512 0.000 BF
+  19 conv    256       1 x 1/ 1     13 x  13 x 512 ->   13 x  13 x 256 0.044 BF
+  20 conv   1024       3 x 3/ 1     13 x  13 x 256 ->   13 x  13 x1024 0.797 BF
+  21 conv    256       1 x 1/ 1     13 x  13 x1024 ->   13 x  13 x 256 0.089 BF
+  22 conv   1024       3 x 3/ 1     13 x  13 x 256 ->   13 x  13 x1024 0.797 BF
+  23 conv     18       1 x 1/ 1     13 x  13 x1024 ->   13 x  13 x  18 0.006 BF
+  24 yolo
+[Sonar Detector] params: iou loss: mse (2), iou_norm: 0.75, cls_norm: 1.00, scale_x_y: 1.00
+  25 route  21                                     ->   13 x  13 x 256
+  26 conv    256       1 x 1/ 1     13 x  13 x 256 ->   13 x  13 x 256 0.022 BF
+  27 upsample                 2x    13 x  13 x 256 ->   26 x  26 x 256
+  28 route  27 17                                  ->   26 x  26 x 768
+  29 conv    128       1 x 1/ 1     26 x  26 x 768 ->   26 x  26 x 128 0.133 BF
+  30 conv    512       3 x 3/ 1     26 x  26 x 128 ->   26 x  26 x 512 0.797 BF
+  31 conv    128       1 x 1/ 1     26 x  26 x 512 ->   26 x  26 x 128 0.089 BF
+  32 conv    512       3 x 3/ 1     26 x  26 x 128 ->   26 x  26 x 512 0.797 BF
+  33 conv     18       1 x 1/ 1     26 x  26 x 512 ->   26 x  26 x  18 0.012 BF
+  34 yolo
+[Sonar Detector] params: iou loss: mse (2), iou_norm: 0.75, cls_norm: 1.00, scale_x_y: 1.00
+Total BFLOPS 6.720
+ Allocate additional workspace_size = 1.56 MB
+Loading weights from ..\cfg-weights\mffd_A_final.weights...
+ seen 64
+Done! Loaded 35 layers from weights-file

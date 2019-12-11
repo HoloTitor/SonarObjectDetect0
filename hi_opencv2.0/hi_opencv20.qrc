@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/hi_opencv20">
+        <file>Resources/stylesheet.qss</file>
+        <file>logo.ico</file>
+        <file>screen.bmp</file>
+    </qresource>
+</RCC>

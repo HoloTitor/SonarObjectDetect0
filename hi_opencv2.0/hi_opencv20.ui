@@ -1,0 +1,1498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>hi_opencv20Class</class>
+ <widget class="QMainWindow" name="hi_opencv20Class">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>872</width>
+    <height>617</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>10</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>声呐目标检测与识别系统</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item alignment="Qt::AlignTop">
+     <widget class="QToolBox" name="toolBox">
+      <property name="minimumSize">
+       <size>
+        <width>180</width>
+        <height>550</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>180</width>
+        <height>550</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="currentIndex">
+       <number>8</number>
+      </property>
+      <widget class="QWidget" name="page1">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>180</width>
+         <height>316</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>江南</string>
+       </property>
+       <attribute name="label">
+        <string>图像平滑</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>归一化块滤波</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string>高斯滤波</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="text">
+           <string>中值滤波</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="text">
+           <string>双边滤波</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>180</width>
+         <height>316</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>形态变换</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QPushButton" name="btnErode">
+          <property name="text">
+           <string>腐蚀变换</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnDilate">
+          <property name="text">
+           <string>膨胀变换</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnOpening">
+          <property name="text">
+           <string>开运算</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnClosing">
+          <property name="text">
+           <string>闭运算</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMG">
+          <property name="text">
+           <string>形态梯度</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnTopHat">
+          <property name="text">
+           <string>顶帽</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnBlackHat">
+          <property name="text">
+           <string>黑帽</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>180</width>
+         <height>316</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>直方图</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QPushButton" name="pushButton_zhi_1">
+          <property name="text">
+           <string>计算图像直方图</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_zhi_2">
+          <property name="text">
+           <string>直方图均衡化</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_zhi_3">
+          <property name="text">
+           <string>反向投影</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>180</width>
+         <height>316</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>图像变形</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QPushButton" name="btnScale">
+          <property name="text">
+           <string>放缩</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnRotate">
+          <property name="text">
+           <string>旋转</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnL2R">
+          <property name="text">
+           <string>水平置换</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnT2D">
+          <property name="text">
+           <string>垂直置换</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnpyr">
+          <property name="text">
+           <string>图像金字塔</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>180</width>
+         <height>316</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>边缘检测</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QPushButton" name="btnScale_2">
+          <property name="text">
+           <string>Sobel导数</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnScale_3">
+          <property name="text">
+           <string>Laplace算子</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnScale_4">
+          <property name="text">
+           <string>Canny边缘检测</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnScale_5">
+          <property name="text">
+           <string>霍夫线变换</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnScale_7">
+          <property name="text">
+           <string>霍夫圆变换</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnScale_8">
+          <property name="text">
+           <string>图像轮廓</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>180</width>
+         <height>316</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>目标定位</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="text">
+           <string>凸包</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_6">
+          <property name="text">
+           <string>创建矩形和圆形框</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_7">
+          <property name="text">
+           <string>创建倾斜的椭圆边界框</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_6">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>180</width>
+         <height>316</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>模板匹配</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <widget class="QPushButton" name="pushButton_8">
+          <property name="text">
+           <string>打开模板图形</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_9">
+          <property name="text">
+           <string>匹配方法一</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_10">
+          <property name="text">
+           <string>匹配方法二</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_11">
+          <property name="text">
+           <string>匹配方法三</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_12">
+          <property name="text">
+           <string>匹配方法四</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_13">
+          <property name="text">
+           <string>匹配方法五</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_14">
+          <property name="text">
+           <string>匹配方法六</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>180</width>
+         <height>316</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>功能应用</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <widget class="QPushButton" name="btnObjectDetect">
+          <property name="text">
+           <string>目标检测</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_8">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>180</width>
+         <height>316</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>关闭</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_11"/>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QWidget" name="horizontalWidget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QScrollArea" name="input">
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAsNeeded</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAsNeeded</enum>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>311</width>
+              <height>406</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Maximum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>10</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QScrollArea" name="output">
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents_2">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>311</width>
+              <height>406</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+border:0px;
+</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="verticalWidget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>140</height>
+         </size>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QWidget" name="horizontalWidget" native="true">
+           <property name="maximumSize">
+            <size>
+             <width>600</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QSpinBox" name="spinBox_1">
+              <property name="minimumSize">
+               <size>
+                <width>60</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>60</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>500</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="slider_1">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>1</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="tickPosition">
+               <enum>QSlider::NoTicks</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QWidget" name="horizontalWidget_2" native="true">
+           <property name="maximumSize">
+            <size>
+             <width>600</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QSpinBox" name="spinBox_2">
+              <property name="minimumSize">
+               <size>
+                <width>60</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>60</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>255</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="slider_2">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>1</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="styleSheet">
+    <string notr="true">font: 75 10pt &quot;Agency FB&quot;;
+color:#ffffff;</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action1_4"/>
+   <addaction name="actionsave"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionopen">
+   <property name="text">
+    <string>open</string>
+   </property>
+  </action>
+  <action name="actionsave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="actionopen_2">
+   <property name="text">
+    <string>open</string>
+   </property>
+  </action>
+  <action name="actionsave_2">
+   <property name="text">
+    <string>save</string>
+   </property>
+  </action>
+  <action name="action1">
+   <property name="text">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="action1_2">
+   <property name="text">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="action1_3">
+   <property name="text">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="action1_4">
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="hi_opencv20.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_blur()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>272</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_gaussian()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_median()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>181</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>441</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_Bilateral()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>221</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>531</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action1_4</sender>
+   <signal>triggered()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>open()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>482</x>
+     <y>281</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnErode</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_erode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDilate</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_dilate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>189</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnOpening</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_opening()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>153</x>
+     <y>165</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>237</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnClosing</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_closing()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnMG</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_MG()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnTopHat</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_tophat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>102</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnBlackHat</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_blackhat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>285</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnScale</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_scale()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>167</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>145</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRotate</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_rotate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>187</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnL2R</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_L2R()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>217</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnT2D</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_T2D()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>247</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>304</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnpyr</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_pyr()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>576</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_zhi_1</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_zhione_show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>131</x>
+     <y>156</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>213</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_zhi_2</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_zhitwo_show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_zhi_3</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_zhithree_show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>155</x>
+     <y>236</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>242</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_slider_1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>757</x>
+     <y>612</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>674</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_slider_2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>757</x>
+     <y>656</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>733</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionsave</sender>
+   <signal>triggered()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>535</x>
+     <y>310</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_convexHull()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>135</x>
+     <y>229</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>121</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_rectcircle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>173</x>
+     <y>279</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>65</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_7</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_fitEllipse()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>147</x>
+     <y>339</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_open2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>132</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>412</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_9</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_match1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>483</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_10</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_match2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>560</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_match3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>441</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_12</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_match4()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>142</x>
+     <y>355</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>61</x>
+     <y>-14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_match5()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>146</x>
+     <y>-15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_14</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_match6()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>121</x>
+     <y>-11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_1</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>757</x>
+     <y>612</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>451</x>
+     <y>613</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>slider_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>757</x>
+     <y>656</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>451</x>
+     <y>657</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>slider_1</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>451</x>
+     <y>613</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>757</x>
+     <y>612</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>slider_2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>451</x>
+     <y>657</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>757</x>
+     <y>656</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolBox</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_init()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>148</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>237</x>
+     <y>-11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnScale_2</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_Sobel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>183</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-113</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnScale_3</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_Laplace()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>213</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-15</x>
+     <y>62</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnScale_4</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_Canny()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-21</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnScale_5</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_HoughLines()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>273</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-5</x>
+     <y>34</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnScale_7</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_HoughCircles()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnScale_8</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>on_findContours()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-35</x>
+     <y>410</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnObjectDetect</sender>
+   <signal>clicked()</signal>
+   <receiver>hi_opencv20Class</receiver>
+   <slot>objectDetect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>67</x>
+     <y>247</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-68</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>open()</slot>
+  <slot>on_blur()</slot>
+  <slot>on_gaussian()</slot>
+  <slot>on_median()</slot>
+  <slot>on_Bilateral()</slot>
+  <slot>on_slider_1()</slot>
+  <slot>on_slider_2()</slot>
+  <slot>on_erode()</slot>
+  <slot>on_dilate()</slot>
+  <slot>on_opening()</slot>
+  <slot>on_closing()</slot>
+  <slot>on_MG()</slot>
+  <slot>on_tophat()</slot>
+  <slot>on_blackhat()</slot>
+  <slot>on_scale()</slot>
+  <slot>on_rotate()</slot>
+  <slot>on_L2R()</slot>
+  <slot>on_T2D()</slot>
+  <slot>on_pyr()</slot>
+  <slot>on_zhione_show()</slot>
+  <slot>on_zhitwo_show()</slot>
+  <slot>on_zhithree_show()</slot>
+  <slot>save()</slot>
+  <slot>on_convexHull()</slot>
+  <slot>on_rectcircle()</slot>
+  <slot>on_fitEllipse()</slot>
+  <slot>on_open2()</slot>
+  <slot>on_match1()</slot>
+  <slot>on_match2()</slot>
+  <slot>on_match3()</slot>
+  <slot>on_match4()</slot>
+  <slot>on_match5()</slot>
+  <slot>on_match6()</slot>
+  <slot>on_sipnbox1()</slot>
+  <slot>on_spinbox2()</slot>
+  <slot>on_init()</slot>
+  <slot>on_HoughCircles()</slot>
+  <slot>on_Sobel()</slot>
+  <slot>on_Laplace()</slot>
+  <slot>on_Canny()</slot>
+  <slot>on_HoughLines()</slot>
+  <slot>on_findContours()</slot>
+  <slot>on_threshold()</slot>
+  <slot>on_copyMakeBorder()</slot>
+  <slot>on_pointPolygonTest()</slot>
+  <slot>textDetect()</slot>
+  <slot>flawDetect()</slot>
+  <slot>objectDetect()</slot>
+ </slots>
+</ui>
